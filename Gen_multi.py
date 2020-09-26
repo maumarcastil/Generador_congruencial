@@ -115,6 +115,8 @@ def ExeGenMulti():
     print("El valor de la semilla es: {}".format(semilla))
     posValoresC = PosiblesVAloresC(bases, exponentes)
     print("Los posibles valores de C son: {}".format(posValoresC))
+    if(posValoresC > 1000):
+        posValoresC = 1000
     print("{}".format(ValoresC(posValoresC, modulo)))
 
 
