@@ -70,7 +70,7 @@ def GenValuesMultiply(modulo, bases):
     ##print("el mcmForFunction: {}".format(mcmForFunction))
     #Aplicando formula
     PosValoresMult = []
-    cantidad = int(input("Ingrese la cantidad de valores posibles del multiplicador:"))
+    cantidad = int(input("Ingrese la cantidad de valores posibles del multiplicador a mostrar:"))
     for t in range(0, cantidad):
         PosValoresMult.append(1 + mcmForFunction * t)
     return PosValoresMult
@@ -110,14 +110,19 @@ def ValoresC(posValoresC, modulo):
 def ExeGenMulti():
     modulo = int(input("Ingrese el MODULO:"))
     bases, exponentes, cadena = obtener_primos(modulo)
-    print("Los posibles valores de a son: {}".format(GenValuesMultiply(modulo, bases)))
+    valoresA = GenValuesMultiply(modulo, bases)
+    print("Los posibles valores de A son: {}".format(valoresA))
     semilla = random.randint(0, modulo-1)
     print("El valor de la semilla es: {}".format(semilla))
     posValoresC = PosiblesVAloresC(bases, exponentes)
     print("Los posibles valores de C son: {}".format(posValoresC))
-    if(posValoresC > 1000):
-        posValoresC = 1000
-    print("{}".format(ValoresC(posValoresC, modulo)))
+    cantidad = int(input("Ingrese la cantidad de valores posibles C a mostrar:"))
+    valoresC = ValoresC(cantidad, modulo)
+    print("{}".format(valoresC))
+    print("Mi GLC generado es:")
+    print("GLC({},{},{},{})".format(semilla, valoresA[random.randint(0, len(valoresA))], valoresC[random.randint(0, len(valoresC))], modulo))
+
+
 
 
 def Init():
