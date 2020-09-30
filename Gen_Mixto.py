@@ -107,7 +107,7 @@ def ValoresC(posValoresC, modulo):
         if(len(primos) == (cant)):
             return(primos)
 
-def ExeGenMulti():
+def ExeGenMixto():
     modulo = int(input("Ingrese el MODULO:"))
     bases, exponentes, cadena = obtener_primos(modulo)
     valoresA = GenValuesMultiply(modulo, bases)
@@ -126,7 +126,7 @@ def ExeGenMulti():
 
 
 def Init():
-    ExeGenMulti()
+    ExeGenMixto()
 
 
 if __name__ == "__main__":
